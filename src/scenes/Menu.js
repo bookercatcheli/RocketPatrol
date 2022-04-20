@@ -4,33 +4,24 @@ class Menu extends Phaser.Scene {
     }
     
     preload() {
-        // load audio
-        this.load.audio('sfx_select', 'assets/assets_blip_select12.wav');
-        this.load.audio('sfx_explosion', 'assets/assets_explosion38.wav');
-        this.load.audio('sfx_rocket', 'assets/assets_rocket_shot.wav');
+        // select 
+        this.load.audio('startBoop', 'assets/startBoop.wav');
+        // mouse 'explosion'
+        this.load.audio('mouseSFX1', 'assets/mouseSFX1.wav');
+        this.load.audio('mouseSFX2', 'assets/mouseSFX2.wav');
+        this.load.audio('mouseSFX3', 'assets/mouseSFX3.wav');
+        this.load.audio('mouseSFX4', 'assets/mouseSFX4.wav');
+        // cheese launch
+        this.load.audio('cheeseSFX', 'assets/cheeseSFX.wav');
+
+        // load title screen
+        this.load.image('titleScreen', 'assets/titleScreen.png');
+
     }
     
     create() {
-        // menu text configuration
-        let menuConfig = {
-            fontFamily: 'Courier',
-            fontSize: '28px',
-            backgroundColor: '#F3B141',
-            color: '#843605',
-            align: 'right',
-            padding: {
-              top: 5,
-              bottom: 5,
-            },
-            fixedWidth: 0
-        }
 
-        // show menu text
-        this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'ROCKET PATROL', menuConfig).setOrigin(0.5);
-        this.add.text(game.config.width/2, game.config.height/2, 'Use ←→ to move & (F) to fire', menuConfig).setOrigin(0.5);
-        menuConfig.backgroundColor = '#00FF00';
-        menuConfig.color = '#000';
-        this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding, 'Press ← for Novice or → for Expert', menuConfig).setOrigin(0.5);
+        this.titleScreen = this.add.tileSprite(0,0, 640, 480, 'titleScreen').setOrigin(0,0);
         
         // define keys
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
@@ -45,7 +36,7 @@ class Menu extends Phaser.Scene {
             spaceshipSpeed: 3,
             gameTimer: 60000    
           }
-          this.sound.play('sfx_select');
+          this.sound.play('startBoop');
           this.scene.start('play');    
         }
         if (Phaser.Input.Keyboard.JustDown(keyRIGHT)) {
@@ -54,7 +45,7 @@ class Menu extends Phaser.Scene {
             spaceshipSpeed: 4,
             gameTimer: 45000    
           }
-          this.sound.play('sfx_select');
+          this.sound.play('startBoop');
           this.scene.start('play');    
         }
       }
