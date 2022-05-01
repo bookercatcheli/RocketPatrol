@@ -13,8 +13,6 @@ class Play extends Phaser.Scene {
 
     create() {
 
-        //this.add.text(20, 20, "Welcome to da play scene.");
-
         this.starfield = this.add.tileSprite(0,0, 640,480, 'starfield').setOrigin(0,0);
        
        // green UI background
