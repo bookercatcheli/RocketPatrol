@@ -30,7 +30,6 @@ class Play extends Phaser.Scene {
 
     create() {
 
-<<<<<<< HEAD
         this.starfield = this.add.tileSprite(0,0, 640,480, 'starfield').setOrigin(0,0);
        
        // green UI background
@@ -40,15 +39,6 @@ class Play extends Phaser.Scene {
         this.add.rectangle(0, game.config.height - borderUISize, game.config.width, borderUISize, 0xFFFFFF).setOrigin(0, 0);
         this.add.rectangle(0, 0, borderUISize, game.config.height, 0xFFFFFF).setOrigin(0, 0);
         this.add.rectangle(game.config.width - borderUISize, 0, borderUISize, game.config.height, 0xFFFFFF).setOrigin(0, 0);
-=======
-        // backgrounds
-        this.background = this.add.tileSprite(0,0, 640,480, 'background').setOrigin(0,0);
-        this.midground = this.add.tileSprite(0,0, 640,480, 'midground').setOrigin(0,0);
-        this.foreground = this.add.tileSprite(0,0, 640,480, 'foreground').setOrigin(0,0);
-        this.grass = this.add.tileSprite(0,0, 640,480, 'grass').setOrigin(0,0);
-
-        
->>>>>>> 53d1eb71c36e1e2994f9cabd514ab7e97b6c187e
 
         this.p1Rocket = new Rocket(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'cheese').setOrigin(0.5, 0);
 
